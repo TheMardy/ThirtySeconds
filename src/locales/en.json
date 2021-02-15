@@ -1,0 +1,23 @@
+{
+    "add_team": "Add Team",
+    "team_name": "Team Name",
+    "player_name": "Player Name",
+    "teams": "Teams",
+    "team": "Team",
+    "players": "players",
+    "resume_game": "Resume Game",
+    "new_game": "New Game",
+    "at_least_2_teams_required": "There must be at least 2 teams to start the game",
+    "has_less_than_2_players": "has less than 2 players",
+    "settings": "Settings",
+    "points_goal": "Points Goal",
+    "home": "Home",
+    "end_game": "End Game",
+    "default_settings": "Default Settings",
+    "help": "Help",
+    "installing_updating": "Installing & Updating",
+    "help_installing_info": "This app is installable as Progressive Web App. Installing the app will make it possible to play without an internet connection and get updates automatically.",
+    "safari_s1": "Click the 'share' icon",
+    "safari_s2": "Click 'Add to Home screen'",
+    "safari_s3": "Click 'Add'"
+}

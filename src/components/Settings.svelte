@@ -3,10 +3,16 @@
     import Credits from './Credits.svelte'
     import Changelog from './Changelog.svelte'
     import { fly } from 'svelte/transition';
+    import { _, locale, locales } from 'svelte-i18n'
     
    function changeGoal(){
        saveSettings();
    }
+
+   locale.subscribe((loc) => {
+        settings.locale = loc;
+        saveSettings();
+   });
 
    async function forceSWupdate () {
         if ('serviceWorker' in navigator) {
@@ -30,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="c-white">Instellingen</h1>
+                <h1 class="c-white">{$_('settings')}</h1>
             </div>
         </div>
     
@@ -42,7 +48,7 @@
                         <div class="card-body">
                             <div class="row mb-2 justify-content-center">
                                 <div class="col-12">
-                                    <label for="pointsGoal" class="form-label">Punten Doel:</label>
+                                    <label for="pointsGoal" class="form-label">{$_('points_goal')}:</label>
                                     <input inputmode="numeric" pattern="[0-9]*" type="number" class="form-control" id="pointsGoal" bind:value="{$settings.pointsToWin}"
                                     on:change="{() => changeGoal()}">
                                 </div>
@@ -55,7 +61,7 @@
                 <div class="col-12 col-md-8 col-lg-6 mb-3">
                     <div class="card bg-blue" on:click="{() => goToHome()}">
                         <div class="card-body text-center">
-                            <h3 class="c-white">Home</h3>
+                            <h3 class="mb-0 c-white">{$_('home')}</h3>
                         </div>
                     </div>
                 </div>
@@ -65,7 +71,7 @@
                 <div class="col-12 col-md-8 col-lg-6 mb-3">
                     <div class="card bg-red" on:click="{() => endGame()}">
                         <div class="card-body text-center">
-                            <h3 class="c-white">Beeindig Spel</h3>
+                            <h3 class="mb-0 c-white">{$_('end_game')}</h3>
                         </div>
                     </div>
                 </div>
@@ -73,9 +79,18 @@
             {/if}
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 mb-3">
+                    <select class="form-select" bind:value={$locale}>
+                        {#each $locales as locale}
+                        <option value={locale}>{locale}</option>
+                        {/each}
+                    </select>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 mb-3">
                     <div class="card bg-red" on:click="{() => setDefaultSettings()}">
                         <div class="card-body text-center">
-                            <h3 class="c-white">Standaardinstellingen</h3>
+                            <h3 class="mb-0 c-white">{$_('default_settings')}</h3>
                         </div>
                     </div>
                 </div>

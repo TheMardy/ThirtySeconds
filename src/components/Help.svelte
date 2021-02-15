@@ -1,7 +1,8 @@
 <script>
-	import {currentGameScreen, game,  settings, saveSettings, endGame, prevGameScreen, goToHome } from '../stores/stores.js'
+	import {currentGameScreen } from '../stores/stores.js'
     import Home from './Home.svelte'
 	import { fly } from 'svelte/transition';
+    import { _ } from 'svelte-i18n'
   
     let safari = false;
     let chrome = false;
@@ -22,7 +23,7 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="c-white">Help</h1>
+                <h1 class="c-white">{$_('help')}</h1>
             </div>
         </div>
     
@@ -34,9 +35,8 @@
                         <div class="card-body">
                             <div class="row mb-2 justify-content-center">
                                 <div class="col-12">
-                                    <h3 class="text-center">Installeren & Updaten</h3>
-                                    <p class="mb-0">Deze app is te installeren als Progressive Web App, zodat hij zonder 
-                                        internetverbinding is te gebruiken en automatische updates krijgt.
+                                    <h3 class="text-center">{$_('installing_updating')}</h3>
+                                    <p class="mb-0">{$_('help_installing_info')}
                                     </p>
                                 </div>
                             </div>
@@ -50,9 +50,9 @@
                                     <h5 on:click="{() => {safari = !safari}}"><i class="fab fa-apple"></i> Safari <i class="fas float-end d-inline fa-chevron-down"></i></h5>
                                     <hr>
                                     <ol type="1">
-                                        <li>Klik op het "delen" icoontje</li>
-                                        <li>Klik op "Zet op beginscherm"</li>
-                                        <li>Klik op "Voeg toe"</li>
+                                        <li>{$_('safari_s1')}</li>
+                                        <li>{$_('safari_s2')}</li>
+                                        <li>{$_('safari_s3')}</li>
                                     </ol>
                                     {/if}
                                 </div>

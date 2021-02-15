@@ -1,0 +1,19 @@
+{
+    "add_team": "Team Toevoegen",
+    "team_name": "Team Naam",
+    "player_name": "Speler Naam",
+    "teams": "Teams",
+    "team": "Team",
+    "players": "spelers",
+    "resume_game": "Herstel Spel",
+    "new_game": "Nieuw Spel",
+    "at_least_2_teams_required": "Er moeten minstens 2 teams zijn om het spel te starten",
+    "has_less_than_2_players": "heeft minder dan 2 spelers",
+    "settings": "instellingen",
+    "help": "Help",
+    "installing_updating": "Installeren & Updaten",
+    "help_installing_info": "Deze app is te installeren als Progressive Web App. Het installeren van de app maak het mogelijk om te spelen zonder internetverbinding en automatische updates te krijgen.",
+    "safari_s1": "Klik op het 'delen' icoon",
+    "safari_s2": "Klik op 'Voeg toe aan beginscherm'",
+    "safari_s3": "Klik op 'Voeg toe'"
+  }

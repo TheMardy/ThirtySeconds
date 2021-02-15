@@ -6,7 +6,8 @@
 	import Help from './Help.svelte'
 	import {currentGameScreen, game, localStorage, settings, prevGameScreen } from '../stores/stores.js'
     import {wordsDatabase} from '../stores/wordsDatabase.js';
-	import { fly } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
+    import { _ } from 'svelte-i18n'
     
     class Game {
       constructor(teams) {
@@ -96,14 +97,14 @@
         let canStart = true;
         if(teams.length < 2){
             canStart = false;
-            window.pushToast("Er zijn minimaal 2 teams nodig om te starten");
+            window.pushToast($_('at_least_2_teams_required'));
             return;
         }
 
         teams.forEach(team => {
             if(team.players.length < 2) {
                 canStart = false;
-                window.pushToast("Team "+team.name+" heeft minder dan 2 spelers");
+                window.pushToast($_('team') + " " + team.name + " " + $_('has_less_than_2_players'));
                 return;
             }
         })
@@ -163,9 +164,9 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="row mb-2">
-                                <div class="col-12"><h5 class="text-center">Team Toevoegen</h5></div>
+                                <div class="col-12"><h5 class="text-center">{$_('add_team')}</h5></div>
                                 <div class="col-12">
-                                    <input class="form-control" type="text" bind:value="{newTeamName}" placeholder="Team Naam">
+                                    <input class="form-control" type="text" bind:value="{newTeamName}" placeholder="{$_('team_name')}">
                                 </div>
                             </div>
                             <div class="row justify-content-center">
@@ -175,7 +176,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-4 mb-2">
                                     <button class="btn bg-red w-100 c-white" 
-                                        on:click="{() => resetTeams()}"><i class="fas fa-trash-alt"></i> Teams</button>
+                                        on:click="{() => resetTeams()}"><i class="fas fa-trash-alt"></i> {$_('teams')}</button>
                                 </div>
                             </div>
                         </div>
@@ -190,10 +191,10 @@
                         <div class="card-body">
                             {#if team.playersVisible}
                             <h3 class="d-inline mb-0 float-start"><div class="d-inline" on:click="{() => {removeTeam(i)}}"><i class="fas fa-trash-alt c-red"></i></div> {team.name}</h3>
-                            <h3 class="d-inline mb-0 float-end" on:click="{() => {team.playersVisible = !team.playersVisible; saveToLocalStorage()}}">{team.players.length || 0} spelers <i class="fas fa-chevron-down"></i></h3>
+                            <h3 class="d-inline mb-0 float-end" on:click="{() => {team.playersVisible = !team.playersVisible; saveToLocalStorage()}}">{team.players.length || 0} {$_('players')} <i class="fas fa-chevron-down"></i></h3>
                             {:else}
                             <h3 class="d-inline mb-0 float-start">{team.name}</h3>
-                            <h3 class="d-inline mb-0 float-end" on:click="{() => {team.playersVisible = !team.playersVisible; saveToLocalStorage() }}">{team.players.length || 0} spelers <i class="fas fa-chevron-right"></i></h3>
+                            <h3 class="d-inline mb-0 float-end" on:click="{() => {team.playersVisible = !team.playersVisible; saveToLocalStorage() }}">{team.players.length || 0} {$_('players')} <i class="fas fa-chevron-right"></i></h3>
                             {/if}
     
                             {#if team.playersVisible}
@@ -201,7 +202,7 @@
                             <hr>
                             <div class="row mb-3">
                                 <div class="col-8 col-md-10">
-                                    <input class="form-control" type="text" bind:value="{newTeamMemberName}" placeholder="Speler Naam">
+                                    <input class="form-control" type="text" bind:value="{newTeamMemberName}" placeholder="{$_('player_name')}">
                                 </div>
                                 <div class="col-4 col-md-2">
                                     <button class="btn bg-blue w-100"
@@ -227,7 +228,7 @@
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="card bg-blue" on:click="{() => resumeGame()}">
                         <div class="card-body text-center">
-                            <h2 class="c-white">Herstel Spel</h2>
+                            <h2 class="c-white">{$_('resume_game')}</h2>
                             <span class="c-white">{getResumeGameDateString($game.started)}</span>
                         </div>
                     </div>
@@ -239,7 +240,7 @@
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="card bg-blue" on:click="{() => startGame()}">
                         <div class="card-body text-center">
-                            <h2 class="c-white">Nieuw Spel</h2>
+                            <h2 class="c-white">{$_('new_game')}</h2>
                         </div>
                     </div>
                 </div>

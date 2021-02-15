@@ -7,30 +7,8 @@
 	import {currentGameScreen, game, localStorage, settings, prevGameScreen } from '../stores/stores.js'
     import {wordsDatabase} from '../stores/wordsDatabase.js';
 	import { fly } from 'svelte/transition';
-    
-    class Game {
-      constructor(teams) {
-        this.teams = teams;
-        this.round = 0;
-        this.started;
-        this.words = [];
-      }
-    }
-    
-    class Team {
-      constructor(name) {
-        this.name = name;
-        this.players = [];
-        this.points = 0;
-        this.playersVisible = false;
-      }
-    }
-    
-    class Player {
-      constructor(name) {
-        this.name = name;
-      }
-	}
+    import {Game, Player, Team} from '../stores/classes';
+   
 
 
     let teams = [];

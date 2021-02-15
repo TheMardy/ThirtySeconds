@@ -1,11 +1,11 @@
 <script>
-	import Home from './components/Home.svelte'
+	import ModesOverview from './components/ModesOverview.svelte'
     import { onMount } from 'svelte'
 	import {currentGameScreen, localStorage, prevGameScreen } from './stores/stores.js'
 
 	onMount(() => {
-		currentGameScreen.set(Home);
-		prevGameScreen.set(Home);
+		currentGameScreen.set(ModesOverview);
+		prevGameScreen.set(ModesOverview);
         localStorage.set(window.localStorage);
 	});
 

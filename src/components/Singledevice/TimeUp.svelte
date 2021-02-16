@@ -1,5 +1,5 @@
 <script>
-   	import {currentGameScreen, getCurrentPlayer } from '../stores/stores.js'
+   	import {currentGameScreen, getCurrentPlayer } from '../../stores/stores.js'
     import GuessedOverview from './GuessedOverview.svelte';
 	import { fly } from 'svelte/transition';
 

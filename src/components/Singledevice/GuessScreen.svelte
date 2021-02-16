@@ -1,5 +1,5 @@
 <script>
-    import {currentGameScreen, getCurrentPlayer, currentFiveWords } from '../stores/stores.js'
+    import {currentGameScreen, getCurrentPlayer, currentFiveWords } from '../../stores/stores.js'
 	import TimeUp from './TimeUp.svelte'
 	import { fly } from 'svelte/transition';
 

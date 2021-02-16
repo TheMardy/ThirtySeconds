@@ -1,10 +1,10 @@
 <script>
     import { onMount } from 'svelte';
 	import InterimScore from './InterimScore.svelte'
-	import Settings from '../Settings.svelte'
+	import Settings from '../Singledevice/Settings.svelte'
 	import Toast from '../Toast.svelte'
 	import Help from '../Help.svelte'
-	import {currentGameScreen, game, localStorage, settings, prevGameScreen } from '../../stores/stores.js'
+	import {currentGameScreen } from '../../stores/stores.js'
     import {wordsDatabase} from '../../stores/wordsDatabase.js';
     import { fly } from 'svelte/transition';
     import {socketIo, roomPlayers, roomId, playerName, roomTeams} from '../../stores/multiDeviceStores.js'

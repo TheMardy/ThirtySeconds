@@ -1,6 +1,6 @@
 <script>
 	import {currentGameScreen, game,  settings, saveSettings, endGame, prevGameScreen, goToHome } from '../stores/stores.js'
-    import Home from './Home.svelte'
+    import Home from './Singledevice/Home.svelte'
 	import { fly } from 'svelte/transition';
   
     let safari = false;

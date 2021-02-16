@@ -1,7 +1,7 @@
 <script>
-	import {currentGameScreen, game,  settings, saveSettings, endGame, prevGameScreen, goToHome, setDefaultSettings } from '../stores/stores.js'
-    import Credits from './Credits.svelte'
-    import Changelog from './Changelog.svelte'
+	import {currentGameScreen, game,  settings, saveSettings, endGame, prevGameScreen, goToHome, setDefaultSettings } from '../../stores/stores.js'
+    import Credits from '../Credits.svelte'
+    import Changelog from '../Changelog.svelte'
     import { fly } from 'svelte/transition';
     
    function changeGoal(){

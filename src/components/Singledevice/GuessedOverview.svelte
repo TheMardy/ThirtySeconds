@@ -1,5 +1,5 @@
 <script>
-    import {currentGameScreen, changeCurrentTeamPoints, getCurrentPlayer, currentFiveWords, goToNextRound } from '../stores/stores.js'
+    import {currentGameScreen, changeCurrentTeamPoints, getCurrentPlayer, currentFiveWords, goToNextRound } from '../../stores/stores.js'
 	import InterimScore from './InterimScore.svelte'
 	import { fly } from 'svelte/transition';
 

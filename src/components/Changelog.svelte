@@ -1,6 +1,6 @@
 <script>
 	import {currentGameScreen} from '../stores/stores.js'
-    import Settings from './Settings.svelte'
+    import Settings from './Singledevice/Settings.svelte'
 	import { fly } from 'svelte/transition';
   
     let v110 = true;

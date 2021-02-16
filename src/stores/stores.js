@@ -1,5 +1,5 @@
 import { writable, get } from 'svelte/store';
-import Home from '../components/Home.svelte';
+import Home from '../components/Singledevice/Home.svelte';
 
 const defaultSettings = {pointsToWin: 30};
 

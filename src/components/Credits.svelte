@@ -1,6 +1,6 @@
 <script>
 	import {currentGameScreen, game,  settings, saveSettings, endGame, prevGameScreen, goToHome } from '../stores/stores.js'
-    import Settings from './Settings.svelte'
+    import Settings from './Singledevice/Settings.svelte'
 	import { fly } from 'svelte/transition';
   
     </script>

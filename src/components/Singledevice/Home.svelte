@@ -2,12 +2,12 @@
     import { onMount } from 'svelte';
 	import InterimScore from './InterimScore.svelte'
 	import Settings from './Settings.svelte'
-	import Toast from './Toast.svelte'
-	import Help from './Help.svelte'
-	import {currentGameScreen, game, localStorage, settings, prevGameScreen } from '../stores/stores.js'
-    import {wordsDatabase} from '../stores/wordsDatabase.js';
+	import Toast from '../Toast.svelte'
+	import Help from '../Help.svelte'
+	import {currentGameScreen, game, localStorage, settings, prevGameScreen } from '../../stores/stores.js'
+    import {wordsDatabase} from '../../stores/wordsDatabase.js';
 	import { fly } from 'svelte/transition';
-    import {Game, Player, Team} from '../stores/classes';
+    import {Game, Player, Team} from '../../stores/classes';
    
 
 

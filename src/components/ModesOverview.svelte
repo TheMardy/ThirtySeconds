@@ -1,9 +1,8 @@
 <script>
    	import {currentGameScreen } from '../stores/stores.js'
     import { fly } from 'svelte/transition';
-    import Home from './Home.svelte'
+    import Home from './Singledevice/Home.svelte'
     import MultiDeviceHome from './Multidevice/MultiDeviceHome.svelte'
-	import Settings from './Settings.svelte'
 	import Toast from './Toast.svelte'
 	import Help from './Help.svelte'
 </script>
@@ -14,9 +13,6 @@
             <div class="col-12">
                 <div class="float-start" on:click="{() => currentGameScreen.set(Help)}">
                     <i class="c-white fas fa-question-circle"></i>
-                </div>
-                <div class="float-end" on:click="{() => currentGameScreen.set(Settings)}">
-                    <i class="c-white fas fa-cog"></i>
                 </div>
             </div>
         </div>

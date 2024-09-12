@@ -52,7 +52,7 @@ jobs:
           
       # Install node modules
       - name: Install node modules
-        run: npm ci
+        run: npm i
         
       # Create production build
       - name: Create production build

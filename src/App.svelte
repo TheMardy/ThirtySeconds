@@ -1,6 +1,6 @@
 <script>
 	import Home from './components/Home.svelte'
-    import { onMount } from 'svelte'
+  import { onMount } from 'svelte'
 	import {currentGameScreen, localStorage, prevGameScreen } from './stores/stores.js'
 
 	onMount(() => {

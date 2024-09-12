@@ -46,9 +46,9 @@ jobs:
           include: "src/components/Settings.svelte"
         
       # Set up Node and
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: 20
           
       # Install node modules
       - name: Install node modules
